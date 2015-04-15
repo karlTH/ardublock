@@ -2018,6 +2018,81 @@
 				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" />
 			</BlockConnectors>
 		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_Loop" kind="command" color="245 245 245" initlabel="bg.Easy_Transfer_Loop" is-starter="yes" is-terminator="yes" label-unique="yes">
+			<description>
+				<text>this is the loop of the structure of easy transfer</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="cmd" connector-kind="socket"/>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_available" kind="data" color="245 245 245" initlabel="bg.Easy_Transfer_available">
+			<BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug" position-type="mirror" />
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_send_variable_number" kind="command" color="232 156 149" initlabel="bg.Easy_Transfer_send_variable_number">
+			<description>
+				<text>Send integer variable</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.variable">
+					<DefaultArg genus-name="message" label="integer_variable_name" />
+				</BlockConnector>
+				<BlockConnector connector-type="number" connector-kind="socket" label="bc.value">
+					<DefaultArg genus-name="number" label="0" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_send_variable_digital" kind="command" color="204 153 255" initlabel="bg.Easy_Transfer_send_variable_digital">
+			<description>
+				<text>Send digital </text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.variable">
+					<DefaultArg genus-name="message" label="digital_variable_name" />
+				</BlockConnector>
+				<BlockConnector connector-type="boolean" connector-kind="socket" label="bc.value">
+					<DefaultArg genus-name="digital-high" label="HIGH" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_set_variable_number" kind="command" color="232 156 149" initlabel="bg.Easy_Transfer_set_variable_number">
+			<description>
+				<text>Set integer variable</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket">
+					<DefaultArg genus-name="message" label="integer_variable_name" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_set_variable_digital" kind="command" color="204 153 255" initlabel="bg.Easy_Transfer_set_variable_digital">
+			<description>
+				<text>Set digital </text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="string" connector-kind="socket">
+					<DefaultArg genus-name="message" label="digital_variable_name"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_receive_digital" kind="data" color="204 153 255" initlabel="bg.Easy_Transfer_receive_digital">
+			<BlockConnectors>
+				<BlockConnector connector-type="boolean" connector-kind="plug"/>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.variable">
+					<DefaultArg genus-name="message" label="digital_variable_name" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+		<BlockGenus name="Easy_Transfer_receive_number" kind="data" color="232 156 149" initlabel="bg.Easy_Transfer_receive_number">
+			<BlockConnectors>
+				<BlockConnector connector-type="number" connector-kind="plug"/>
+				<BlockConnector connector-type="string" connector-kind="socket" label="bc.variable">
+					<DefaultArg genus-name="message" label="integer_variable_name" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
 
 		<!-- ******************** Storage *************** -->
 		<BlockGenus name="eeprom_read_int" kind="data" color="0 100 90" initlabel="bg.eeprom_read_int">
@@ -10819,6 +10894,14 @@
 				<BlockGenusMember>DuinoEDU_hand_positionX</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_handRotX</BlockGenusMember>
 				<BlockGenusMember>DuinoEDU_angle_pouce</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_Loop</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_available</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_set_variable_number</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_set_variable_digital</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_send_variable_number</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_send_variable_digital</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_receive_number</BlockGenusMember>
+				<BlockGenusMember>Easy_Transfer_receive_digital</BlockGenusMember>
 			</BlockDrawer>
 			<BlockDrawer button-color="26 97 218" name="bd.scoop">
 			    <BlockGenusMember>scoop_task</BlockGenusMember>
